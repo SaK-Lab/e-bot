@@ -17,8 +17,8 @@ defmodule EbotApi.Thinks do
       [%One{}, ...]
 
   """
-  def list_ones do
-    Repo.all(One)
+  def list_ones(user) do
+    Repo.all(Ecto.assoc(user, :ones))
   end
 
   @doc """
