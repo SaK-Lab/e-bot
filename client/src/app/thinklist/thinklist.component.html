@@ -23,8 +23,9 @@
                 Vueを知る
             </div>
         </li>
+        <app-thinklist-input></app-thinklist-input>
     </ul>
-    <button type="button" class="btn_add">
+    <button type="button" (click)="addThinkInput()"  class="btn_add">
         <img class="btn_add_image" src="../../assets/icon_plus.svg" alt="plus">
         <span class="btn_add_word">追加</span>
     </button>

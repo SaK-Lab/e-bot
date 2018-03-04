@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { ThinklistInputComponent } from './thinklist-input/thinklist-input.component';
+
 
 @Component({
   selector: 'app-thingslist',
@@ -10,6 +12,10 @@ export class ThinklistComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addThinkInput(): void {
+      console.log('click');
   }
 
 }

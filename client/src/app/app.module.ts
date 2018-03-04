@@ -10,13 +10,15 @@ import { LoginComponent } from './login/login.component';
 import { ThinklistComponent } from './thinklist/thinklist.component';
 
 import { LoginService } from './login/login.service';
+import { ThinklistInputComponent } from './thinklist/thinklist-input/thinklist-input.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ThinklistComponent
+    ThinklistComponent,
+    ThinklistInputComponent
   ],
   imports: [
     BrowserModule,
