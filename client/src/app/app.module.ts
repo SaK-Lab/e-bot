@@ -1,22 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { ThingslistComponent } from './thingslist/thingslist.component';
+import { ThinklistComponent } from './thinklist/thinklist.component';
+
+import { LoginService } from './login/login.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ThingslistComponent
+    ThinklistComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
