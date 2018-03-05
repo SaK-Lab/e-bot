@@ -11,6 +11,7 @@ import { ThinklistComponent } from './thinklist/thinklist.component';
 
 import { LoginService } from './login/login.service';
 import { ThinklistInputComponent } from './thinklist/thinklist-input/thinklist-input.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ThinklistInputComponent } from './thinklist/thinklist-input/thinklist-i
     AppComponent,
     LoginComponent,
     ThinklistComponent,
-    ThinklistInputComponent
+    ThinklistInputComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
