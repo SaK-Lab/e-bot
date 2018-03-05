@@ -1,0 +1,29 @@
+.item_inputtext{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_think{
+    height: 30px;
+    width: 80%;
+    padding: 0 5px;
+    background: rgba(85,85,85,0.11);
+    box-shadow: inset 0 1px 1px 0 rgba(66,66,66,0.04);
+    border-radius: 3px;
+    border: none;
+    font-family: HiraginoSans-W3;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.input_think:focus{
+    outline: none;
+}
+
+.btn_done{
+    width: 10%;
+    font-family: HiraginoSans-W3;
+    font-size: 14px;
+    color: #FFFFFF;
+}
