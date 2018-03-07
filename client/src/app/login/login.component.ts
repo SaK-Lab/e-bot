@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from '../models/Login';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import 'rxjs/add/operator/finally';
+import { Router } from '@angular/router';
+
+
+// Service
+import { LoginService } from './login.service';
+import { importType } from '@angular/compiler/src/output/output_ast';
+
 
 
 @Component({
@@ -14,7 +22,9 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
 
   constructor(
-     private _fb: FormBuilder
+    private _loginService: LoginService,
+    private _fb: FormBuilder,
+    private _router: Router
   ) { }
 
 
@@ -24,13 +34,24 @@ export class LoginComponent implements OnInit {
 
   initForm(): void {
     this.loginForm = this._fb.group({
-        'password': this.password,
-        'user_name': this.username
+        'user_name': this.username,
+        'password': this.password
     });
   }
 
   onSubmitLogin(loginData: Login): void {
-    console.log(loginData);
+    this._loginService.signIn(loginData)
+        .subscribe(
+            succ => {
+                console.log(succ);
+                localStorage.setItem('user_id', succ.user_id);
+                localStorage.setItem('token', succ.token);
+            },
+            err => console.log(err),
+            () => {
+                this._router.navigateByUrl('/');
+            }
+        );
   }
 
 }
