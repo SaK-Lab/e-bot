@@ -6,6 +6,8 @@ import { catchError } from 'rxjs/operators';
 // Models
 import { SignInResults } from '../models/SignInResult';
 import { Login } from '../models/Login';
+import { Signup } from '../models/Signup';
+
 
 
 
@@ -25,5 +27,9 @@ export class AuthService {
 
   signIn(requestBody: Login): Observable<SignInResults> {
     return this._http.post<SignInResults>(`${this.ROOT_URL}/signin/`, requestBody);
+  }
+
+  signUp(requestBody: Signup): Observable<any> {
+    return this._http.post<Observable<any>>(`${this.ROOT_URL}/signup`, requestBody);
   }
 }

@@ -17,6 +17,7 @@ import { ChatComponent } from './chat/chat.component';
 import { AuthService } from './services/auth.service';
 import { TokenInterceptor } from './services/token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -27,7 +28,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     LoginComponent,
     ThinklistComponent,
     ThinklistInputComponent,
-    ChatComponent
+    ChatComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
