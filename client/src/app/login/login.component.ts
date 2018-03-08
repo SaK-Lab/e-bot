@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 
 // Service
-import { LoginService } from './login.service';
+import { AuthService } from '../services/auth.service';
 import { importType } from '@angular/compiler/src/output/output_ast';
 
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
 
   constructor(
-    private _loginService: LoginService,
+    private _auth: AuthService,
     private _fb: FormBuilder,
     private _router: Router
   ) { }
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin(loginData: Login): void {
-    this._loginService.signIn(loginData)
+    this._auth.signIn(loginData)
         .subscribe(
             succ => {
                 console.log(succ);

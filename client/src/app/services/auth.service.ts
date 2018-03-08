@@ -11,12 +11,17 @@ import { Login } from '../models/Login';
 
 
 @Injectable()
-export class LoginService {
+export class AuthService {
   ROOT_URL = 'http://localhost:4000/api';
 
   constructor(
       private _http: HttpClient
   ) { }
+
+  getToken(): string|boolean {
+      const token = localStorage.getItem('token') || false;
+      return token;
+  }
 
   signIn(requestBody: Login): Observable<SignInResults> {
     return this._http.post<SignInResults>(`${this.ROOT_URL}/signin/`, requestBody);
