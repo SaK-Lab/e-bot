@@ -36,7 +36,8 @@ defmodule EbotApiWeb.Endpoint do
     key: "_ebot_api_key",
     signing_salt: "6YW8k16h"
 
-  plug EbotApiWeb.Router
+    plug CORSPlug
+    plug EbotApiWeb.Router
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.

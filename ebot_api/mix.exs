@@ -41,7 +41,8 @@ defmodule EbotApi.Mixfile do
       {:cowboy, "~> 1.0"},
       {:comeonin, "~> 3.0"},
       {:guardian, "~> 0.14"},
-      {:guardian_db, "~> 0.8.0"}
+      {:guardian_db, "~> 0.8.0"},
+      {:cors_plug, "~> 1.5"}
     ]
   end
 
