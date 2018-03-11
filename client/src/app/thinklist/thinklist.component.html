@@ -8,22 +8,12 @@
 </header>
 <div class="contentsWrapper">
     <ul class="thinkList">
-        <li class="listItem">
-            <div class="item_word">
-                Angularマスターになる
-            </div>
-        </li>
-        <li class="listItem">
-            <div class="item_word">
-                Reactを勉強する
-            </div>
-        </li>
-        <li class="listItem">
-            <div class="item_word">
-                Vueを知る
-            </div>
-        </li>
-        <app-thinklist-input></app-thinklist-input>
+            <li class="listItem" *ngFor="let item of thinkList;">
+                <div class="item_word">
+                    {{item.content}}
+                </div>
+            </li>
+        <app-thinklist-input (item)="sendItem($event)"></app-thinklist-input>
     </ul>
     <button type="button" (click)="addThinkInput()"  class="btn_add">
         <img class="btn_add_image" src="../../assets/icon_plus.svg" alt="plus">
