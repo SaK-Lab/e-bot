@@ -19,8 +19,10 @@ import { ThinkResults } from '../models/ThinkResult';
 export class ThinklistComponent implements OnInit {
 
     firstName = 'heyhey';
-    thinkList: Observable<any>;
+    thinkList: Array<any>;
     postThinkData: Think;
+
+    toggleInput = false;
 
   constructor(
       private _thinkService: ThinkService
@@ -31,7 +33,7 @@ export class ThinklistComponent implements OnInit {
         .subscribe(
             succ => {
                 this.thinkList = succ.data.reverse();
-                console.log(succ.data);
+                console.log(this.thinkList);
             },
             err => console.log(err),
             () => console.log('done' + this.thinkList)
@@ -55,7 +57,10 @@ export class ThinklistComponent implements OnInit {
     };
     return this._thinkService.postThink(this.postThinkData)
       .subscribe(
-        succ => console.log(succ),
+        succ => {
+          console.log(succ);
+          this.thinkList.push(succ.data);
+        },
         err => console.log(err),
         () => console.log('done')
       );
@@ -63,6 +68,14 @@ export class ThinklistComponent implements OnInit {
 
   onclick($event) {
     alert($event);
+  }
+
+  showInput(){
+    this.toggleInput = true;
+  }
+
+  hideInput(){
+    this.toggleInput = false;
   }
 
 }
