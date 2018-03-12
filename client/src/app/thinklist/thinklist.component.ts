@@ -40,12 +40,7 @@ export class ThinklistComponent implements OnInit {
         );
   }
 
-  addThinkInput(): void {
-      console.log('click');
-  }
-
   getList(): Observable<any> {
-      console.log(this._thinkService.getThinks());
     return this._thinkService.getThinks();
   }
 
@@ -58,16 +53,11 @@ export class ThinklistComponent implements OnInit {
     return this._thinkService.postThink(this.postThinkData)
       .subscribe(
         succ => {
-          console.log(succ);
           this.thinkList.push(succ.data);
         },
         err => console.log(err),
         () => console.log('done')
       );
-  }
-
-  onclick($event) {
-    alert($event);
   }
 
   showInput(){
