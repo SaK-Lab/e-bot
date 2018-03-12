@@ -1,5 +1,14 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ThinklistInputComponent } from './thinklist-input/thinklist-input.component';
+import { ThinkService } from './think.service';
+import { Observable } from 'rxjs/observable';
+import { Think } from '../models/Think';
+import { ThinkResults } from '../models/ThinkResult';
+
+
+
+
+
 
 
 @Component({
@@ -9,13 +18,64 @@ import { ThinklistInputComponent } from './thinklist-input/thinklist-input.compo
 })
 export class ThinklistComponent implements OnInit {
 
-  constructor() { }
+    firstName = 'heyhey';
+    thinkList: Array<any>;
+    postThinkData: Think;
+
+    toggleInput = false;
+
+  constructor(
+      private _thinkService: ThinkService
+  ) { }
 
   ngOnInit() {
+      this.getList()
+        .subscribe(
+            succ => {
+                this.thinkList = succ.data.reverse();
+                console.log(this.thinkList);
+            },
+            err => console.log(err),
+            () => console.log('done' + this.thinkList)
+        );
   }
 
   addThinkInput(): void {
       console.log('click');
+  }
+
+  getList(): Observable<any> {
+      console.log(this._thinkService.getThinks());
+    return this._thinkService.getThinks();
+  }
+
+  sendItem(item: string) {
+    this.postThinkData = {
+      one : {
+        content: item
+      }
+    };
+    return this._thinkService.postThink(this.postThinkData)
+      .subscribe(
+        succ => {
+          console.log(succ);
+          this.thinkList.push(succ.data);
+        },
+        err => console.log(err),
+        () => console.log('done')
+      );
+  }
+
+  onclick($event) {
+    alert($event);
+  }
+
+  showInput(){
+    this.toggleInput = true;
+  }
+
+  hideInput(){
+    this.toggleInput = false;
   }
 
 }

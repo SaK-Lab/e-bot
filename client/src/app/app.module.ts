@@ -18,6 +18,7 @@ import { AuthService } from './services/auth.service';
 import { TokenInterceptor } from './services/token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
+import { ThinkService } from './thinklist/think.service';
 
 
 
@@ -38,7 +39,9 @@ import { SignupComponent } from './signup/signup.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService,
+  providers: [
+    AuthService,
+    ThinkService,
     {
         provide: HTTP_INTERCEPTORS,
         useClass: TokenInterceptor,

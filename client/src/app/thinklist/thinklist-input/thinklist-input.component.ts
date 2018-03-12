@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-thinklist-input',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./thinklist-input.component.css']
 })
 export class ThinklistInputComponent implements OnInit {
+  @Output() item = new EventEmitter<string>();
+
+  data = '';
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  onclick() {
+    this.item.emit(this.data);
+  }
 }
