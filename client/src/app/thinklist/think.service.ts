@@ -24,4 +24,8 @@ export class ThinkService {
     return this._http.post<ThinkResults>(`${this.ROOT_URL}/ones`, requestBody);
   }
 
+  deleteThink(id: number): Observable<any> {
+    return this._http.delete<any>(`${this.ROOT_URL}/ones/${id}`);
+  }
+
 }

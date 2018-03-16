@@ -6,14 +6,14 @@
         <img src="../../assets/icon_plus.svg" alt="plus">
     </div>
 </header>
-<div class="contentsWrapper">
+<div class="contentsWrapper" #thinkParent>
     <ul class="thinkList">
             <li class="listItem" *ngFor="let item of thinkList;">
                 <div class="item_word">
                     {{item.content}}
                 </div>
             </li>
-        <app-thinklist-input *ngIf="toggleInput" (item)="sendItem($event); toggleInput=false"></app-thinklist-input>
+        <app-thinklist-input *ngIf="toggleInput" (item)="sendItem($event); hideInput();"></app-thinklist-input>
     </ul>
     <button type="button" (click)="showInput()"  class="btn_add">
         <img class="btn_add_image" src="../../assets/icon_plus.svg" alt="plus">

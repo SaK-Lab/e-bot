@@ -14,48 +14,20 @@
             E-bot
         </p>
         <div class="chatItemBody">
-
             <p class="chatBody">
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
+                『{{ currentMsg }}』<br>このタスクは9０点以上ですか？
             </p>
         </div>
     </div>
     <div class="chatItem chatItem-you">
         <div class="chatItemBody">
             <p class="chatBody">
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-            </p>
-        </div>
-    </div>
-    <div class="chatItem chatItem-you">
-        <div class="chatItemBody">
-            <p class="chatBody">
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-            </p>
-        </div>
-    </div>
-    <div class="chatItem chatItem-you">
-        <div class="chatItemBody">
-            <p class="chatBody">
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
-                言葉がはいります。言葉がはいります。言葉がはいります。
+                『{{ currentMsg }}』は90点以上です。
             </p>
         </div>
     </div>
 </div>
 <div class="optionBtnGroup">
-    <button type="button" class="optionBtn">選択肢ボタン</button>
-    <button type="button" class="optionBtn">選択肢ボタン選択肢ボタン選択肢ボタン</button>
-    <button type="button" class="optionBtn">選択肢ボタン</button>
+    <button type="button" class="optionBtn" (click)='increment()' >はい</button>
+    <button type="button" class="optionBtn" (click)='delete(currentMsgId)' >いいえ</button>
 </div>

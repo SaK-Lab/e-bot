@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { ThinklistInputComponent } from './thinklist-input/thinklist-input.component';
 import { ThinkService } from './think.service';
 import { Observable } from 'rxjs/observable';
