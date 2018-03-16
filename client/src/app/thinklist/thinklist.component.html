@@ -13,9 +13,9 @@
                     {{item.content}}
                 </div>
             </li>
-        <app-thinklist-input *ngIf="toggleInput" (item)="sendItem($event)"></app-thinklist-input>
+        <app-thinklist-input *ngIf="toggleInput" (item)="sendItem($event); toggleInput=false"></app-thinklist-input>
     </ul>
-    <button type="button" (click)="addThinkInput()" (click)="showInput()"  class="btn_add">
+    <button type="button" (click)="showInput()"  class="btn_add">
         <img class="btn_add_image" src="../../assets/icon_plus.svg" alt="plus">
         <span class="btn_add_word">追加</span>
     </button>

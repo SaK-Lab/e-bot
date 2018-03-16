@@ -5,12 +5,6 @@ import { Observable } from 'rxjs/observable';
 import { Think } from '../models/Think';
 import { ThinkResults } from '../models/ThinkResult';
 
-
-
-
-
-
-
 @Component({
   selector: 'app-thingslist',
   templateUrl: './thinklist.component.html',
