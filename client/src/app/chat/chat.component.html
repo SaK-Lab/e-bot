@@ -9,6 +9,7 @@
     </div>
 </header>
 <div class="contentsWrapper">
+  <app-msg [msgs]=msgs></app-msg>
     <div class="chatItem chatItem-ebot">
         <p class="chatFrom">
             E-bot
@@ -28,6 +29,6 @@
     </div>
 </div>
 <div class="optionBtnGroup">
-    <button type="button" class="optionBtn" (click)='increment()' >はい</button>
+    <button #btn type="button" class="optionBtn" (click)='increment()' >はい</button>
     <button type="button" class="optionBtn" (click)='delete(currentMsgId)' >いいえ</button>
 </div>
