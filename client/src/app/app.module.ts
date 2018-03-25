@@ -19,6 +19,7 @@ import { TokenInterceptor } from './services/token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { ThinkService } from './thinklist/think.service';
+import { MsgComponent } from './chat/msg/msg.component';
 
 
 
@@ -30,7 +31,8 @@ import { ThinkService } from './thinklist/think.service';
     ThinklistComponent,
     ThinklistInputComponent,
     ChatComponent,
-    SignupComponent
+    SignupComponent,
+    MsgComponent
   ],
   imports: [
     BrowserModule,
