@@ -26,7 +26,7 @@ export class ThinklistComponent implements OnInit {
       this.getList()
         .subscribe(
             succ => {
-                this.thinkList = succ.data.reverse();
+                this.thinkList = succ.reverse();
                 console.log(this.thinkList);
             },
             err => console.log(err),
