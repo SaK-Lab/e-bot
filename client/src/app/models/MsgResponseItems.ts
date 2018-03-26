@@ -1,6 +1,6 @@
-import { MsgItem } from './MsgItem';
+import { Msg } from './Msg';
 
 
 export interface MsgResponseItems {
-  data: MsgItem[];
+  data: Msg[];
 }

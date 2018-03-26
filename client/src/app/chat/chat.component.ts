@@ -1,11 +1,15 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { ThinkService } from '../thinklist/think.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 
 // Models
 import { ThinkResult } from '../models/ThinkResult';
-import { MsgItem } from '../models/MsgItem';
+import { Msg } from '../models/Msg';
+import { MsgItem } from './msg-item';
+
+// Service
+import { ThinkService } from '../thinklist/think.service';
+import { MsgService } from './msg.service';
 
 
 
@@ -19,68 +23,27 @@ import { MsgItem } from '../models/MsgItem';
 })
 export class ChatComponent implements OnInit, AfterViewInit {
 
-  counter = 0;
-  thinkArray: MsgItem[];
-  currentMsg: string;
-  currentMsgId: number;
+  msgs: MsgItem[] = [];
 
-  @ViewChild('btn') btn: ElementRef;
 
-  constructor(private _thinkService: ThinkService) { }
+
+  constructor(
+    private _thinkService: ThinkService,
+    private _MsgService: MsgService
+  ) { }
 
   ngAfterViewInit() {
-    const btn$ = Observable.fromEvent(
-      this.btn.nativeElement, 'click'
-    ).subscribe(
-      succ => {
-        console.log('EventEmit');
-      },
-      err => console.log(err),
-      () => console.log('done')
-    );
+
   }
 
   ngOnInit() {
-    console.log(this.counter);
-    this._thinkService.getThinks()
-      .subscribe(
-        succ => {
-          console.log(succ);
-          this.thinkArray = succ;
-          this.currentMsg = this.thinkArray[this.counter]['content'];
-          this.currentMsgId = this.thinkArray[this.counter]['id'];
-          console.log(this.thinkArray);
-        },
-        err => console.log(err),
-        () => console.log('done')
-      );
+    // Make MsgItem Component List and Assing to msgs
+    this._MsgService.getMsgs().subscribe(
+      succ => {
+        this.msgs = succ;
+        console.log(this.msgs)
+      }
+    )
   }
-
-  nextMsg(): void {
-    if (this.counter < this.thinkArray.length - 1) {
-      this.currentMsg = this.thinkArray[this.counter].content;
-    } else {
-      this.currentMsg = '-';
-    }
-  }
-
-  increment(): void {
-    this.counter++;
-    console.log(this.counter);
-    this.nextMsg();
-  }
-
-  delete(id): void {
-    this._thinkService.deleteThink(this.thinkArray[this.counter].id)
-      .subscribe(
-        succ => {
-          console.log(succ);
-        },
-        err => console.log(err),
-        () => console.log('done')
-      );
-    this.nextMsg();
-  }
-
 
 }

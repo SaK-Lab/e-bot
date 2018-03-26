@@ -20,6 +20,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { ThinkService } from './thinklist/think.service';
 import { MsgComponent } from './chat/msg/msg.component';
+import { MsgService } from './chat/msg.service';
+import { MsgItemComponent } from './chat/msg-item/msg-item.component';
+import { MsgHostDirective } from './msg-host.directive';
 
 
 
@@ -32,7 +35,9 @@ import { MsgComponent } from './chat/msg/msg.component';
     ThinklistInputComponent,
     ChatComponent,
     SignupComponent,
-    MsgComponent
+    MsgComponent,
+    MsgItemComponent,
+    MsgHostDirective
   ],
   imports: [
     BrowserModule,
@@ -44,12 +49,14 @@ import { MsgComponent } from './chat/msg/msg.component';
   providers: [
     AuthService,
     ThinkService,
+    MsgService,
     {
         provide: HTTP_INTERCEPTORS,
         useClass: TokenInterceptor,
         multi: true
     }
  ],
+ entryComponents:[MsgItemComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-export interface MsgItem {
+export interface Msg {
   id: number;
   content: string;
 }

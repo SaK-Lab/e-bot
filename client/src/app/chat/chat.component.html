@@ -9,26 +9,5 @@
     </div>
 </header>
 <div class="contentsWrapper">
-  <app-msg [msgs]=msgs></app-msg>
-    <div class="chatItem chatItem-ebot">
-        <p class="chatFrom">
-            E-bot
-        </p>
-        <div class="chatItemBody">
-            <p class="chatBody">
-                『{{ currentMsg }}』<br>このタスクは9０点以上ですか？
-            </p>
-        </div>
-    </div>
-    <div class="chatItem chatItem-you">
-        <div class="chatItemBody">
-            <p class="chatBody">
-                『{{ currentMsg }}』は90点以上です。
-            </p>
-        </div>
-    </div>
-</div>
-<div class="optionBtnGroup">
-    <button #btn type="button" class="optionBtn" (click)='increment()' >はい</button>
-    <button type="button" class="optionBtn" (click)='delete(currentMsgId)' >いいえ</button>
+  <app-msg [msgs]=msgs ></app-msg>
 </div>
