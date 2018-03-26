@@ -12,7 +12,7 @@ defmodule EbotApi.Repo.Migrations.CreateGuardianTokens do
       add :jwt, :text
       add :claims, :map
  
-      timestamps
+      timestamps()
     end
   end
 end

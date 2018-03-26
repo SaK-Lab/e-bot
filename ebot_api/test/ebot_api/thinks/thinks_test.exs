@@ -6,9 +6,9 @@ defmodule EbotApi.ThinksTest do
   describe "ones" do
     alias EbotApi.Thinks.One
 
-    @valid_attrs %{content: "some content"}
-    @update_attrs %{content: "some updated content"}
-    @invalid_attrs %{content: nil}
+    @valid_attrs %{content: "some content", status_id: 0}
+    @update_attrs %{content: "some updated content", status_id: 1}
+    @invalid_attrs %{content: nil, status_id: nil}
 
     def one_fixture(attrs \\ %{}) do
       {:ok, one} =

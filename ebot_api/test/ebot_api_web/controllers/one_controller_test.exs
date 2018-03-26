@@ -4,9 +4,9 @@ defmodule EbotApiWeb.OneControllerTest do
   alias EbotApi.Thinks
   alias EbotApi.Thinks.One
 
-  @create_attrs %{content: "some content"}
-  @update_attrs %{content: "some updated content"}
-  @invalid_attrs %{content: nil}
+  @create_attrs %{content: "some content", status_id: 0}
+  @update_attrs %{content: "some updated content", status_id: 1}
+  @invalid_attrs %{content: nil, status_id: nil}
 
   def fixture(:one) do
     {:ok, one} = Thinks.create_one(@create_attrs)

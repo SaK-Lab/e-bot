@@ -5,8 +5,8 @@ defmodule EbotApi.Thinks.One do
 
   schema "ones" do
     field :content, :string
-    # field :user_id, :id
     belongs_to :user, EbotApi.Accounts.User
+    field :status_id, :integer, default: 0
 
     timestamps()
   end
@@ -14,7 +14,7 @@ defmodule EbotApi.Thinks.One do
   @doc false
   def changeset(one, attrs) do
     one
-    |> cast(attrs, [:content])
-    |> validate_required([:content])
+    |> cast(attrs, [:content, :status_id])
+    |> validate_required([:content, :status_id])
   end
 end
