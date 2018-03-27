@@ -1,15 +1,9 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { ThinklistInputComponent } from './thinklist-input/thinklist-input.component';
 import { ThinkService } from './think.service';
 import { Observable } from 'rxjs/observable';
 import { Think } from '../models/Think';
 import { ThinkResults } from '../models/ThinkResult';
-
-
-
-
-
-
 
 @Component({
   selector: 'app-thingslist',
@@ -32,7 +26,7 @@ export class ThinklistComponent implements OnInit {
       this.getList()
         .subscribe(
             succ => {
-                this.thinkList = succ.data.reverse();
+                this.thinkList = succ.reverse();
                 console.log(this.thinkList);
             },
             err => console.log(err),
@@ -40,12 +34,7 @@ export class ThinklistComponent implements OnInit {
         );
   }
 
-  addThinkInput(): void {
-      console.log('click');
-  }
-
   getList(): Observable<any> {
-      console.log(this._thinkService.getThinks());
     return this._thinkService.getThinks();
   }
 
@@ -58,16 +47,11 @@ export class ThinklistComponent implements OnInit {
     return this._thinkService.postThink(this.postThinkData)
       .subscribe(
         succ => {
-          console.log(succ);
           this.thinkList.push(succ.data);
         },
         err => console.log(err),
         () => console.log('done')
       );
-  }
-
-  onclick($event) {
-    alert($event);
   }
 
   showInput(){

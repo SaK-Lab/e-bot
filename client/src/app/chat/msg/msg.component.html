@@ -1,0 +1,14 @@
+<ng-template appMsgHost></ng-template>
+
+<!-- <div class="chatItem chatItem-you">
+    <div class="chatItemBody">
+        <p class="chatBody">
+            『 』は90点以上です。
+        </p>
+    </div>
+</div> -->
+
+<div class="optionBtnGroup">
+    <button #btn type="button" class="optionBtn" (click)="loadComponent()">はい</button>
+    <button type="button" class="optionBtn" (click)="loadComponent(sendDeleteOneReqest(currentIndex))" >いいえ</button>
+</div>

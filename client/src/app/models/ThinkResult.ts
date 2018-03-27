@@ -6,3 +6,7 @@ export interface ThinkResults {
   };
 }
 
+export interface ThinkResult {
+  id: number;
+  content: string;
+}
