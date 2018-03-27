@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver, AfterCon
 import { MsgHostDirective } from '../../msg-host.directive';
 import { MsgItem } from '../msg-item';
 import { Msg } from '../../models/Msg';
+import { ThinkService } from '../../thinklist/think.service';
 
 
 @Component({
@@ -15,19 +16,21 @@ export class MsgComponent implements OnInit, AfterContentInit {
   @ViewChild(MsgHostDirective) msgHost: MsgHostDirective;
 
   constructor(
-    private _componentFactoryResolver: ComponentFactoryResolver
+    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _thinkService: ThinkService
   ) { }
 
   ngOnInit() {
-    setTimeout(()=>{
-      console.log(this.msgs);
+    // TODO: Resolverの導入
+    setTimeout(() => {
       this.loadComponent();
-    }, 3000)
+      console.log(this.msgs);
+    }, 500)
   }
   ngAfterContentInit() {
   }
 
-  loadComponent() {
+  loadComponent(callback?: Function) {
     if (this.currentIndex > this.msgs.length) { return false; }
     this.currentIndex = this.currentIndex + 1;
     const currentMsgItem = this.msgs[this.currentIndex];
@@ -37,6 +40,18 @@ export class MsgComponent implements OnInit, AfterContentInit {
 
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (<any>componentRef.instance).msgs = currentMsgItem.msgs;
+    console.log(this.currentIndex);
+    console.log(componentRef.instance.msgs.id);
+    if (callback) { callback(); }
+  }
+
+  sendDeleteOneReqest(index: number) {
+    const id = this.msgs[index].msgs.id;
+    this._thinkService.deleteThink(id)
+      .subscribe(
+        succ => console.log(succ),
+        err => console.error(err)
+      );
   }
 
 }
