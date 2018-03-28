@@ -1,0 +1,43 @@
+version: '2'
+volumes:
+  deps:
+services:
+  # Client Angular App
+  ebotclient:
+    build: ./docker/client
+    container_name: ebot-client
+    ports:
+      - "80:80"
+    # links:
+    #   - ebotserver:ebotserver
+    volumes:
+      - ./deploy/client:/root/client
+    depends_on:
+      - ebotserver
+  # App server (Elixir / Phoenix)
+  ebotserver:
+    build: ./docker/server
+    container_name: ebot-server
+    # ports:
+    #   - "4000:4000"
+    working_dir: /opt/server
+    # links:
+    #   - ebotdb:ebotdb
+    volumes:
+      - ./ebot_api:/opt/server
+      - deps:/opt/server/deps
+    environment:
+      MIX_ENV: dev
+      DATABASE_URL: ecto://postgres:postgres@ebotdb/ebot_api_dev
+    entrypoint: ["bash", "build.sh"]
+    depends_on:
+      - ebotdb
+  # Database
+  ebotdb:
+    image: postgres:9.6
+    container_name: ebot-db
+    # ports:
+    #   - "5432:5432"
+    environment:
+      POSTGES_USER: postgres
+      POSTGES_PASSWORD: postgres
