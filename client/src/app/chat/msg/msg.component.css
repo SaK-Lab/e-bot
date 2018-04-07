@@ -36,6 +36,10 @@
   line-height: 17px;    
 }
 
+.answerBtn{
+  width: 45%;
+}
+
 .optionBtnGroup{
   display: flex;
   position: fixed;
@@ -47,17 +51,4 @@
   box-sizing: border-box;
   background-color: #fff;
   justify-content: space-between;
-}
-
-.optionBtn{
-  display: block;
-  min-height: 53px;
-  border-radius: 1000px;
-  font-size: 14px;
-  width: 46%;
-  background-image: linear-gradient(137deg, #B4EC51 0%, #47E420 100%);
-  margin-bottom: 12px;
-  color: #fff;
-  padding: 14px 30px;
-  box-sizing: border-box;
 }

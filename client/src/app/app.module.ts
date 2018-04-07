@@ -32,6 +32,8 @@ import {
   MatCheckboxModule,
   MatInputModule,
   MatFormFieldModule,
+  MatToolbarModule,
+  MatIconModule,
 } from '@angular/material';
 
 
@@ -59,7 +61,9 @@ import {
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatIconModule,
   ],
   providers: [
     AuthService,

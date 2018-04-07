@@ -9,6 +9,6 @@
 </div> -->
 
 <div class="optionBtnGroup">
-    <button #btn type="button" class="optionBtn" (click)="loadComponent()">はい</button>
-    <button type="button" class="optionBtn" (click)="loadComponent(sendDeleteOneReqest(currentIndex))" >いいえ</button>
+  <button mat-raised-button class="answerBtn" (click)="loadComponent(sendDeleteOneReqest(currentIndex))" >いいえ</button>
+  <button mat-raised-button class="answerBtn" color="primary" #btn (click)="loadComponent()">はい</button>
 </div>

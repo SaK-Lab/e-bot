@@ -1,17 +1,31 @@
 .commonHeader{
-    display: flex;
-    align-items: center;
-    height: 83px;
-    padding: 0 15px;
     box-shadow: 0 2px 14px 0 rgba(0,0,0,0.25);
     position: fixed;
     top:0;
     width: 100vw;
-    box-sizing: border-box;
-    background-color: #fff;
 }
 
-.iconArea{
+/* 
+
+Overwrite
+
+*/
+
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  height: auto;
+}
+
+.backBtn{
+  padding: 0;
+  min-width: 30px;
+  min-height: 64px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-right: 10px;
+}
+/* .iconArea{
     margin-right: 33px;
 }
 
@@ -19,8 +33,9 @@
     font-family: HelveticaNeue-Bold;
     font-size: 28px;
     color: #151346;
-}
+} */
 
 .contentsWrapper{
-    padding:83px 16px 240px;
+    padding:63px 16px 240px;
 }
+
