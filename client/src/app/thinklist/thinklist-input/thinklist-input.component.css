@@ -14,7 +14,6 @@
     border: none;
     font-family: HiraginoSans-W3;
     font-size: 16px;
-    color: #FFFFFF;
 }
 
 .input_think:focus{
@@ -24,6 +23,4 @@
 .btn_done{
     width: 10%;
     font-family: HiraginoSans-W3;
-    font-size: 14px;
-    color: #FFFFFF;
 }

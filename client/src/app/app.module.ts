@@ -34,6 +34,7 @@ import {
   MatFormFieldModule,
   MatToolbarModule,
   MatIconModule,
+  MatCardModule,
 } from '@angular/material';
 
 
@@ -64,6 +65,7 @@ import {
     MatFormFieldModule,
     MatToolbarModule,
     MatIconModule,
+    MatCardModule,
   ],
   providers: [
     AuthService,
