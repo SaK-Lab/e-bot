@@ -2,11 +2,13 @@
     <div class="contentsWrapper">
         <h1 class="title">E-bot | LOGIN</h1>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)" action="" class="form_group">
-            <div class="input_group">
-                <input class="input_username" [formControl]="username" type="text" name="" id="username" placeholder="username">
-                <input class="input_password" [formControl]="password" type="password" name="" id="password" placeholder="password">
-            </div>
-            <button class="btn_login" type="submit">LOGIN</button>
-        </form>
+            <mat-form-field>
+              <input matInput [formControl]="username" type="text" name="" id="username" placeholder="username">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [formControl]="password" type="password" name="" id="password" placeholder="password">
+            </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">LOGIN</button>
+      </form>
     </div>
 </div>
