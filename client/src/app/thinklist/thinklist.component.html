@@ -1,20 +1,20 @@
 <mat-toolbar color="primary" class="commonHeader">
-    <mat-toolbar-row>
-        <h1 class="title">E-bot</h1>
-    </mat-toolbar-row>
+  <mat-toolbar-row>
+    <h1 class="title">E-bot</h1>
+  </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="contentsWrapper" #thinkParent>
-            <mat-card class="listItem" *ngFor="let item of thinkList;">
-                <div class="item_word">
-                    {{item.content}}
-                </div>
-            </mat-card>
-        <app-thinklist-input *ngIf="toggleInput" (item)="sendItem($event); hideInput();"></app-thinklist-input>
-    <button type="button" (click)="showInput()"  class="btn_add">
-        <img class="btn_add_image" src="../../assets/icon_plus.svg" alt="plus">
-        <span class="btn_add_word">追加</span>
-    </button>
+  <mat-card class="listItem" *ngFor="let item of thinkList;">
+    <div class="item_word">
+      {{item.content}}
+    </div>
+  </mat-card>
+  <app-thinklist-input *ngIf="toggleInput" (item)="sendItem($event); hideInput();"></app-thinklist-input>
+  <button type="button" (click)="showInput()" class="btn_add">
+    <img class="btn_add_image" src="../../assets/icon_plus.svg" alt="plus">
+    <span class="btn_add_word">追加</span>
+  </button>
 </div>
 <a mat-fab routerLink="/chat" class="btn_gotochat">
   <mat-icon>message</mat-icon>
