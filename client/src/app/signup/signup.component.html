@@ -2,12 +2,17 @@
     <div class="contentsWrapper">
         <h1 class="title">E-bot | SIGNUP</h1>
         <form [formGroup]="singupForm" (ngSubmit)="onSubmitSignup(singupForm.value)" action="" class="form_group">
-            <div class="input_group">
-                <input class="input_username" [formControl]="username" type="text" name="" id="username" placeholder="username">
-                <input class="input_password" [formControl]="password" type="password" name="" id="password" placeholder="password">
-                <input class="input_password_confirm" [formControl]="password_confirm" type="password" name="" id="password_confirm" placeholder="password(confirm)">
-            </div>
-            <button class="btn_login" type="submit">SIGNUP</button>
+              <mat-form-field>
+                <input matInput [formControl]="username" type="text" name="" id="username" placeholder="username">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput [formControl]="password" type="password" name="" id="password" placeholder="password">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput [formControl]="password_confirm" type="password" name="" id="password_confirm" placeholder="password(confirm)">
+              </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">SIGNUP</button>
+            <a class="linkBtn" mat-button routerLink="/">LOGIN</a>
         </form>
     </div>
 </div>

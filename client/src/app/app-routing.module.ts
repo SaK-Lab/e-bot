@@ -10,11 +10,11 @@ import { ChatComponent } from './chat/chat.component';
 const routes: Routes = [
     {
         path: '',
-        component: ThinklistComponent
+        component: LoginComponent
     },
     {
-        path: 'login',
-        component: LoginComponent
+        path: 'think',
+        component: ThinklistComponent
     },
     {
         path: 'signup',

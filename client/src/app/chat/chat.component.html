@@ -1,13 +1,13 @@
-<header class="commonHeader">
-    <div class="iconArea">
-        <a routerLink="/">
-            <img src="../../assets/icon_back.svg" alt="plus">
-        </a>
-    </div>
+<mat-toolbar color="primary" class="commonHeader">
+  <mat-toolbar-row>
+    <a routerLink="/think" mat-button class="iconArea backBtn">
+        <mat-icon>arrow_back</mat-icon>
+    </a>
     <div class="logoArea">
-        <h1 class="title">E-bot</h1>
+      <h1 class="title">Be Essential</h1>
     </div>
-</header>
+  </mat-toolbar-row>
+</mat-toolbar>
 <div class="contentsWrapper">
   <app-msg [msgs]=msgs ></app-msg>
 </div>

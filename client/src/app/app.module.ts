@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 // Components
 import { AppComponent } from './app.component';
@@ -24,6 +26,16 @@ import { MsgService } from './chat/msg.service';
 import { MsgItemComponent } from './chat/msg-item/msg-item.component';
 import { MsgHostDirective } from './msg-host.directive';
 
+// AngularMaterial
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+} from '@angular/material';
 
 
 
@@ -37,14 +49,23 @@ import { MsgHostDirective } from './msg-host.directive';
     SignupComponent,
     MsgComponent,
     MsgItemComponent,
-    MsgHostDirective
+    MsgHostDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    /* Angular Material */
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
   ],
   providers: [
     AuthService,
@@ -56,7 +77,7 @@ import { MsgHostDirective } from './msg-host.directive';
         multi: true
     }
  ],
- entryComponents:[MsgItemComponent],
+ entryComponents: [MsgItemComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
